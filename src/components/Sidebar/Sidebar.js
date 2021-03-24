@@ -1,0 +1,48 @@
+import React ,{useEffect ,useState} from 'react'
+import './Sidebar.css'
+import axios from 'axios'
+function Sidebar() {
+    const endPoint= 'http://localhost:1337/categories';
+    const [data ,setData]=useState([]);
+  
+  useEffect(()=>{
+      axios.get(endPoint).then(res=>{
+        console.log(res);
+        setData(res.data);
+
+      }).catch(err=>{
+          console.log(err)
+      })
+  },[])
+ console.log(data)
+    return (
+
+        <div style={{width:450}} className="SidebarContainer">
+            {
+                data.map(item=>(
+                    <div className="head">
+                        <ul  style={{listStyleType:"none"}}>
+                            <li ><a href="" style={{fontSize:"19px"},{fontWeight:"bold"}}>{item.name}</a></li>
+                            <ul style={{listStyleType:"none"}}>
+                              {
+                                  item.sections.map(section=>(
+                                      <li key={section.id}><a href="" style={{fontSize:"15px"}}>{section.name}</a></li>
+
+                                  ))
+                                  
+                              }
+                              <hr style={{backgroundColor:"orangered"},{border:"1px"}}></hr>
+                            </ul>
+                        </ul>
+                        
+                    </div>
+                )
+
+                )
+                
+            }
+        </div>
+    )
+}
+
+export default Sidebar
