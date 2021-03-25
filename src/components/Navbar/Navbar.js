@@ -24,13 +24,13 @@ function Navbar() {
          
             <ul >
               <div style={{margin:"9px"}}>
-              <li><a href="https://dev.folio.org" >Developers</a></li>
+              <li><a href="https://dev.folio.org" className="cool" >Developers</a></li>
+              </div>
+              <div style={{margin:"9px"}} >
+              <li><a href="https://wiki.folio.org" className="cool" >Project Wiki</a></li>
               </div>
               <div style={{margin:"9px"}}>
-              <li><a href="https://wiki.folio.org" >Project Wiki</a></li>
-              </div>
-              <div style={{margin:"9px"}}>
-              <li><a href="https://discuss.folio.org" >Discussion Boards</a></li>
+              <li><a href="https://discuss.folio.org" className="cool">Discussion Boards</a></li>
               </div>
               
               

@@ -22,11 +22,11 @@ function Sidebar() {
                 data.map(item=>(
                     <div className="head">
                         <ul  style={{listStyleType:"none"}}>
-                            <li ><a href="" style={{fontSize:"19px"},{fontWeight:"bold"}}>{item.name}</a></li>
+                            <li ><a href={`/${item.slug}`} style={{fontSize:"19px"},{fontWeight:"bold"}}>{item.name}</a></li>
                             <ul style={{listStyleType:"none"}}>
                               {
                                   item.sections.map(section=>(
-                                      <li key={section.id}><a href="" style={{fontSize:"15px"}}>{section.name}</a></li>
+                                      <li key={section.id}><a href={`/${item.slug}/${section.slug}`} style={{fontSize:"15px"}}>{section.name}</a></li>
 
                                   ))
                                   
