@@ -1,8 +1,9 @@
 import React ,{useEffect ,useState} from 'react'
 import './Sidebar.css'
+import {Link, NavLink} from 'react-router-dom'
 import axios from 'axios'
 function Sidebar() {
-    const endPoint= 'http://localhost:1337/categories';
+    const endPoint= 'http://54.220.211.123:1227/categories';
     const [data ,setData]=useState([]);
   
   useEffect(()=>{
