@@ -3,6 +3,7 @@
   .MainPage {
     width: 99.9%;
     height: 100vh;
+    
     background-color: hsl(0, 0%, 100%);
     display: flex;
     flex-direction: column;
@@ -32,13 +33,15 @@
     display: flex;
     flex-direction: row;
     padding-left: 10px;
+
     
    
   }
   
   .VideoView {
+    
       padding: 20px;
-    width: 99%;
+    width: 99.9%;
     height: 90%;
     background-color: hsl(0, 0%, 100%);
     
