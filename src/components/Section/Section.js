@@ -13,22 +13,28 @@ const Section=({match})=> {
            console.log(err)
        })
 
-    },[]);
-    console.log({sec})
+    },[sec]);
+    
     return (
-        <div>
+        <div className="container">
+            <div className="content">
              <h1 key={sec.id}>{sec.name}</h1>
            { sec && sec.content ?
            (
                sec.content.map(cont=>(
                    <div key={cont.id}>
                        <h2>{cont.title}</h2>
-                       <p>{cont.content}</p>
+                       <div dangerouslySetInnerHTML={{__html:cont.content}}></div>
                        </div>
                ))
            ):null
 
            }
+           </div>
+           <div className='topic'>
+              
+
+           </div>
          
         </div>
     )

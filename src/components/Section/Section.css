@@ -1,0 +1,16 @@
+.container{
+    display: flex;
+    flex-direction: row;
+
+}
+.container .content{
+    flex: 60%;
+    justify-content: left;
+    
+}
+
+
+.container .topic{
+    flex: 30%;
+    justify-content: right;
+}

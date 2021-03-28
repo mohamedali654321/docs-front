@@ -23,7 +23,7 @@ import axios from 'axios'
         });
       
         setData();
-    },[])
+    },[home])
     console.log({home});
     const  setData = async  ()=>{
        await  setContent(home.content)

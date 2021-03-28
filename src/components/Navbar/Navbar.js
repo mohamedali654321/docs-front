@@ -1,11 +1,14 @@
 import React from 'react'
 import './Navbar.css'
-import { Nav, NavItem, NavLink } from 'reactstrap';
-import SearchIcon  from '@material-ui/icons/Search'
+
 function Navbar() {
     return (
-        <div className="navbarContainer">
-          <div className="left"><a href="https://docs.folio.org/" ><img src={"./images/images.png"} style={{width:"120px"}} /></a></div>
+        <nav className="navbarContainer">
+          <div className="left">
+            
+            
+            <a href="https://docs.folio.org/" ><img src={"./images/images.png"} style={{width:"120px"}} /></a>
+            </div>
           <div className="center">
               
             
@@ -33,6 +36,9 @@ function Navbar() {
               <li><a href="https://discuss.folio.org" className="cool">Discussion Boards</a></li>
               </div>
               
+             
+              
+              
               
               
             </ul>
@@ -41,7 +47,7 @@ function Navbar() {
      
           
           </div>
-        </div>
+        </nav>
     )
 }
 

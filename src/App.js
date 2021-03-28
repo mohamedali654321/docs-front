@@ -7,17 +7,20 @@ import Section from './components/Section/Section'
 import Navbar from './components/Navbar/Navbar'
 import Sidebar from './components/Sidebar/Sidebar'
 import Home from './components/Home/Home';
+import Topic from './components/Topic/Topic';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
     <Router>
-       <Switch>
     <div className="MainPage">
      
     <div className="top">
     <Navbar/>
     </div>
+    
    <div className="center">
+   
      
      <div className="scroll">
        
@@ -25,15 +28,26 @@ function App() {
        
     
      </div>
+
+     
+ 
  
    <div className="VideoView scroll">
+
    
-       <Switch>
-          <Route path='/' exact component={Home}></Route>
-          <Route path="/:slug" exact  component={Category}></Route>
-          <Route path="/:slug/:section"  exact component={Section}></Route>
+      
+          <Switch>
+           <Route path='/' exact component={Home}></Route>
+           <Route path="/:slug" exact  component={Category}></Route>
+           <Route path="/:slug/:section"  exact component={Section}></Route>
+           <Route path="/:slug/:section/:topic"  exact component={Topic}></Route>
+           
+          
           </Switch>
-       
+          
+        
+
+   
                          
    </div>
   
@@ -41,10 +55,14 @@ function App() {
    
    </div>
    
+    
    
   </div>
-  </Switch>
+ 
+   
   </Router>
+  
+  
   );
 }
 

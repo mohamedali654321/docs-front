@@ -1,13 +1,17 @@
 import React ,{useEffect ,useState} from 'react'
 import './Sidebar.css'
-import {Link, NavLink} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import axios from 'axios'
 function Sidebar() {
-    const endPoint= 'http://localhost:1337/categories';
+    const endPoint= 'http://54.220.211.123:1227/categories';
+    const endPointSections= 'http://54.220.211.123:1227/sections';
     const [data ,setData]=useState([]);
+    const [topic,setTopic]=useState([]);
+    const [show ,setShow]=useState(false)
 
-
-    
+    const showing=()=>{
+        setShow(!show)
+    }
   
   useEffect(()=>{
        axios.get(endPoint).then(res=>{
@@ -17,8 +21,18 @@ function Sidebar() {
       }).catch(err=>{
           console.log(err)
       })
-  },[])
- //console.log(data)
+  },[data]);
+  useEffect(()=>{
+    axios.get(endPointSections).then(res=>{
+        // console.log(res);
+        setTopic(res.data);
+
+      }).catch(err=>{
+          console.log(err)
+      })
+
+  },[topic])
+
     return (
 
         <div style={{width:450}} className="SidebarContainer">
@@ -26,17 +40,37 @@ function Sidebar() {
                 data.map(item=>(
                     <div className="head">
                         <ul  style={{listStyleType:"none"}}>
-                            <li ><a href={`/${item.slug}`} style={{fontSize:"19px"},{fontWeight:"bold"}}>{item.name}</a></li>
-                            <ul style={{listStyleType:"none"}}>
+                           <Link style={{fontSize:"18px"},{fontWeight:"bold"}}  to={`/${item.slug}`}  ><li >{item.name}</li></Link> 
+                            
                               {
                                   item.sections.map(section=>(
-                                      <li key={section.id}><a href={`/${item.slug}/${section.slug}`} style={{fontSize:"15px"}}>{section.name}</a></li>
+                                    <ul style={{listStyleType:"none"}}>
+                                    <Link style={{fontSize:"17px"}} to={`/${item.slug}/${section.slug}`} onClick={showing}><li>{section.name}</li> </Link> 
+                                    {
+                                        topic.map(topic=>(
+                                            <ul style={{listStyleType:"none"}}>
+                                                {
+                                                    topic.slug === section.slug  ? (
+                                                       <>
+                                                       {
+                                                           topic.topics.map(top=>(
 
+                                                            <Link style={{fontSize:"14px"}} to={`/${item.slug}/${section.slug}/${top.slug}`}><li>{top.name}</li> </Link> 
+                                                           ))
+                                                       }
+                                                       </>
+                                                    ):null
+                                                }
+                                            </ul>
+                                        ))
+                                    }
+                                    </ul>
+                                     
                                   ))
                                   
                               }
                               <hr style={{backgroundColor:"orangered"},{border:"1px"}}></hr>
-                            </ul>
+                           
                         </ul>
                         
                     </div>
