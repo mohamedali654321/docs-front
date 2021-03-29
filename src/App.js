@@ -7,16 +7,18 @@ import Navbar  from './components/Navbar/Navbar'
 import Sidebar  from './components/Sidebar/Sidebar'
 import Home from './components/Home/Home';
 import Topic from './components/Topic/Topic';
+import {ToggleSidebarContext} from './components/Helper/Context'
 
 
 
 
-function App({showSidebar}) {
-const [showSide , setShowSide]=useState(showSidebar);
+function App({}) {
 
 
+const [showSidebar,setShowSidebar]=useState(ToggleSidebarContext)
 
   return (
+    <ToggleSidebarContext.Provider value={{showSidebar,setShowSidebar}}>
     <Router>
     <div className="MainPage">
     
@@ -28,15 +30,18 @@ const [showSide , setShowSide]=useState(showSidebar);
     
    <div className="center">
    
-     { showSide ? (
-          <div className="scroll">
+      {
+        showSidebar &&
+        <div className="scroll">
        
           <Sidebar/>
           
        
-        </div>
-     ):null
-     }
+        </div> 
+      }
+          
+     
+     
      
 
      
@@ -71,7 +76,7 @@ const [showSide , setShowSide]=useState(showSidebar);
  
    
   </Router>
-  
+  </ToggleSidebarContext.Provider>
   
   );
 }

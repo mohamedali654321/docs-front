@@ -1,3 +1,3 @@
 import {createContext} from 'react'
 
-export const ToggleSidebarContext = createContext<boolean>({});
+export const ToggleSidebarContext = createContext({});

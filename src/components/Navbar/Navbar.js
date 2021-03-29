@@ -2,19 +2,17 @@ import React ,{useContext,useState}from 'react'
 import { Link } from 'react-router-dom'
 import './Navbar.css'
 import MenuIcon from "@material-ui/icons/Menu";
-
+import {ToggleSidebarContext} from '../Helper/Context'
 
 function Navbar() {
-const [showSidebar,setShowSidebar]=useState(true)
+const {showSidebar,setShowSidebar}=useContext(ToggleSidebarContext)
   
-    const show =()=>{
-      setShowSidebar(!showSidebar)
-    }
-    console.log({showSidebar})
+    
+    
     return (
         <nav className="navbarContainer">
           <div className="left">
-            <button id="sidebarToggle" onClick={show}><MenuIcon id="icon"/> </button>
+            <button id="sidebarToggle" onClick={()=>{setShowSidebar(!showSidebar)}}><MenuIcon id="icon"/> </button>
             
             
             <Link to="https://docs.folio.org/" ><img id="img" src={"./images/images.png"} style={{width:"120px"}} /></Link>

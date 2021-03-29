@@ -8,7 +8,7 @@ import {useHistory} from 'react-router-dom'
 
 const Home=({match})=> {
     const slug=match.params.slug;
-    const endPoint=`http://localhost:1337/categories/${slug}`;
+    const endPoint=`http://54.220.211.123:1227/categories/${slug}`;
     const [cat, setCat]=useState([]);
     // const [content,setContent]=useState([]);
    const redirect=useHistory();
