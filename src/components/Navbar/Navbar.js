@@ -1,13 +1,23 @@
-import React from 'react'
+import React ,{useContext,useState}from 'react'
+import { Link } from 'react-router-dom'
 import './Navbar.css'
+import MenuIcon from "@material-ui/icons/Menu";
+
 
 function Navbar() {
+const [showSidebar,setShowSidebar]=useState(true)
+  
+    const show =()=>{
+      setShowSidebar(!showSidebar)
+    }
+    console.log({showSidebar})
     return (
         <nav className="navbarContainer">
           <div className="left">
+            <button id="sidebarToggle" onClick={show}><MenuIcon id="icon"/> </button>
             
             
-            <a href="https://docs.folio.org/" ><img src={"./images/images.png"} style={{width:"120px"}} /></a>
+            <Link to="https://docs.folio.org/" ><img id="img" src={"./images/images.png"} style={{width:"120px"}} /></Link>
             </div>
           <div className="center">
               
@@ -52,3 +62,4 @@ function Navbar() {
 }
 
 export default Navbar
+

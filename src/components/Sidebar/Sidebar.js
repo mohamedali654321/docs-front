@@ -35,7 +35,7 @@ function Sidebar() {
 
     return (
 
-        <div style={{width:450}} className="SidebarContainer">
+        <div style={{width:430}} className="SidebarContainer">
             {
                 data.map(item=>(
                     <div className="head">
@@ -50,11 +50,11 @@ function Sidebar() {
                                         topic.map(topic=>(
                                             <ul style={{listStyleType:"none"}}>
                                                 {
-                                                    topic.slug === section.slug  ? (
+                                                    topic.slug === section.slug   ? (
                                                        <>
                                                        {
                                                            topic.topics.map(top=>(
-
+                                                              
                                                             <Link style={{fontSize:"14px"}} to={`/${item.slug}/${section.slug}/${top.slug}`}><li>{top.name}</li> </Link> 
                                                            ))
                                                        }

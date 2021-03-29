@@ -8,14 +8,28 @@
     flex-direction: column;
     
   }
+  
+  
   .scroll{
-      overflow: scroll;
+      overflow: auto;
       overflow-x: hidden;
       
       
     
   }
-  .top {
+  
+  
+  .scrollx{
+    overflow: scroll;
+    overflow-x: auto;
+    overflow-y: auto;
+     
+}
+  
+
+
+
+.top {
     width: 100%;
     height: 70px;
     background-color:hsl(0, 0%, 100%);
@@ -31,7 +45,7 @@
     background-color:hsl(0, 0%, 100%);
     display: flex;
     flex-direction: row;
-    padding-left: 10px;
+    padding-left: 20px;
 
     
    
@@ -39,7 +53,8 @@
   
   .VideoView {
     
-      padding: 20px;
+    padding: 20px;
+    padding-left: 10px;
     width: 100%;
     height: 97%;
     background-color: hsl(0, 0%, 100%);
@@ -48,29 +63,4 @@
   
 
 
-  .bottom{
-    width: 90vw;
-    height: 50px;
-    background-color: orangered;
-    padding-right: 12pt;
-    text-align: center;
-    font-family: "Open Sans";
-    
-   
-    
-  } 
-
-  /* .bottom{
-    height: 100px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #111;
-    height: auto;
-    width: 90vw;
-    font-family: "Open Sans";
-    padding-top: 40px;
-    color: #fff;
-
-  } */
+  

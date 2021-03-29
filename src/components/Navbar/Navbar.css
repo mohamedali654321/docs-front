@@ -11,10 +11,46 @@
 .navbarContainer .left{
     flex: 33%;
     width: auto;
-    padding-left: 30px;
+    
     padding-top:5px ;
     
 }
+
+.navbarContainer .left #icon {
+    font-size: 30px;
+    margin:5px;
+    margin-right: 5px;
+  }
+
+  .navbarContainer .left #img{
+      border-radius: 10%;
+  }
+
+
+
+
+  .navbarContainer .left #sidebarToggle:hover {
+    cursor: pointer;
+  }
+  
+  .navbarContainer .left #sidebarToggle:focus {
+    outline: none;
+    background-color: rgb(245, 70, 7);
+  }
+
+
+
+  .navbarContainer .left #sidebarToggle {
+    border: none;
+    background-color: orangered;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 45%;
+    margin: 10px;
+    
+  }
+  
 
 
 .navbarContainer .center{

@@ -37,7 +37,7 @@ import axios from 'axios'
                home.content.map(cont=>(
                    <div key={cont.id}>
                        <h2>{cont.title}</h2>
-                       <p>{cont.content}</p>
+                       <div dangerouslySetInnerHTML={{__html:cont.content}}></div>
                        </div>
                ))
            ):null

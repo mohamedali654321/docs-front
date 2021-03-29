@@ -25,7 +25,11 @@ const Home=({match})=> {
         
     },[cat]);
     
-    
+    if(!cat)
+    { 
+      redirect.push('/');
+      return;
+    }
    
     
     return (
