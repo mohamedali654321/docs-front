@@ -2,7 +2,7 @@ import React ,{useEffect,useState} from 'react'
 import axios from 'axios'
  function Home() {
 
-    const endPoint='http://localhost:1337/categories/home';
+    const endPoint='http://54.220.211.123:1227/categories/home';
     const [home,setHome]=useState([]);
     const [content,setContent]=useState([]);
     useEffect(()=>{
@@ -34,7 +34,7 @@ import axios from 'axios'
                home.content.map(cont=>(
                    <div key={cont.id}>
                        <h3>{cont.title}</h3>
-                       <div style={{fontSize:".75vw"}}  dangerouslySetInnerHTML={{__html:cont.content}}></div>
+                       <div style={{fontSize:"14px"}}  dangerouslySetInnerHTML={{__html:cont.content}}></div>
                        </div>
                ))
            ):null

@@ -15,7 +15,8 @@ const {showSidebar,setShowSidebar}=useContext(ToggleSidebarContext)
             <button id="sidebarToggle" onClick={()=>{setShowSidebar(!showSidebar)}}><MenuIcon id="icon"/> </button>
             
             
-            <Link to="https://docs.folio.org/" ><img id="img" src={"./images/images.png"} style={{width:"120px"}} /></Link>
+            <a href='https://docs.folio.org/' ><img  src={"./images/folio.png"} style={{width:"118px"}} /> </a> 
+            
             </div>
           <div className="center">
               

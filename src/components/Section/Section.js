@@ -5,7 +5,7 @@ const Section=({match})=> {
 
     const slug=match.params.slug;
     const section=match.params.section
-    const endPoint=`http://localhost:1337/categories/${slug}/${section}`;
+    const endPoint=`http://54.220.211.123:1227/categories/${slug}/${section}`;
     const [sec, setSec]=useState([]);
     useEffect(()=>{
        axios.get(endPoint).then(res=>{
@@ -27,7 +27,7 @@ const Section=({match})=> {
                sec.content.map(cont=>(
                    <div key={cont.id}>
                        <h3>{cont.title}</h3>
-                       <div style={{fontSize:".75vw"}} dangerouslySetInnerHTML={{__html:cont.content}}></div>
+                       <div style={{fontSize:"14px"}} dangerouslySetInnerHTML={{__html:cont.content}}></div>
                        </div>
                ))
            ):null
