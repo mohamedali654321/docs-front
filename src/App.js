@@ -7,6 +7,7 @@ import Navbar  from './components/Navbar/Navbar'
 import Sidebar  from './components/Sidebar/Sidebar'
 import Home from './components/Home/Home';
 import Topic from './components/Topic/Topic';
+import Footer from './components/Footer/Footer'
 import {ToggleSidebarContext} from './components/Helper/Context'
 
 
@@ -32,7 +33,7 @@ const [showSidebar,setShowSidebar]=useState(ToggleSidebarContext)
    
       {
         showSidebar &&
-        <div className="scroll">
+        <div className="scroll bar ">
        
           <Sidebar/>
           
@@ -44,12 +45,12 @@ const [showSidebar,setShowSidebar]=useState(ToggleSidebarContext)
      
      
 
-     
+ 
  
  
    <div className="VideoView scrollx">
-
-   
+     
+          <div className="content">
       
           <Switch>
            <Route path='/' exact component={Home}></Route>
@@ -59,10 +60,13 @@ const [showSidebar,setShowSidebar]=useState(ToggleSidebarContext)
            
           
           </Switch>
-          
+         
+          </div>
         
-
-   
+          
+          <div className="sticky-footer footer bad">
+           <Footer/>
+           </div>
                          
    </div>
   

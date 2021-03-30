@@ -8,7 +8,7 @@ import {useHistory} from 'react-router-dom'
 
 const Home=({match})=> {
     const slug=match.params.slug;
-    const endPoint=`http://54.220.211.123:1227/categories/${slug}`;
+    const endPoint=`http://localhost:1337/categories/${slug}`;
     const [cat, setCat]=useState([]);
     // const [content,setContent]=useState([]);
    const redirect=useHistory();
@@ -36,8 +36,9 @@ const Home=({match})=> {
         <Container>
 
       <Row>
+        
 
-        <Col sm={8}>
+        <Col sm={4}>
             <h1 key={cat.id}>{cat.name}</h1>
             { cat && cat.content ?
             (
@@ -51,6 +52,7 @@ const Home=({match})=> {
 
                    }
                   </Col>
+                  
         
 </Row>
 

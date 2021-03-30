@@ -4,8 +4,8 @@ import {Link} from 'react-router-dom'
 import axios from 'axios'
 import {ToggleSidebarContext} from '../Helper/Context'
 function Sidebar() {
-    const endPoint= 'http://54.220.211.123:1227/categories';
-    const endPointSections= 'http://54.220.211.123:1227/sections';
+    const endPoint= 'http://localhost:1337/categories';
+    const endPointSections= 'http://localhost:1337/sections';
     const [data ,setData]=useState([]);
     const [topic,setTopic]=useState([]);
     const [show ,setShow]=useState(false)
@@ -22,7 +22,7 @@ function Sidebar() {
       }).catch(err=>{
           console.log(err)
       })
-  },[data]);
+  },[]);
   useEffect(()=>{
     axios.get(endPointSections).then(res=>{
         // console.log(res);
@@ -32,11 +32,11 @@ function Sidebar() {
           console.log(err)
       })
 
-  },[topic])
+  },[])
 
     return (
           
-        <div style={{width:430}} className="SidebarContainer">
+        <div style={{width:420}} className="SidebarContainer">
             
             
 

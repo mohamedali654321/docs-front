@@ -2,20 +2,17 @@ import React ,{useEffect,useState} from 'react'
 import axios from 'axios'
  function Home() {
 
-    const endPoint='http://54.220.211.123:1227/categories/home';
+    const endPoint='http://localhost:1337/categories/home';
     const [home,setHome]=useState([]);
     const [content,setContent]=useState([]);
     useEffect(()=>{
          axios.get(endPoint)
         .then(  res=>{
-            if(!res)
-            {
-                console.log('something wrong')
-            }
-            else{
+            
+            
                  
-                  setHome(res.data)
-            }
+      setHome(res.data)
+            
            
         })
         .catch(err=>{
@@ -23,7 +20,7 @@ import axios from 'axios'
         });
       
         setData();
-    },[home])
+    },[])
     console.log({home});
     const  setData = async  ()=>{
        await  setContent(home.content)

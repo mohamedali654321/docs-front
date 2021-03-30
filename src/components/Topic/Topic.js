@@ -5,7 +5,7 @@ function Topic({match}) {
      const slug=match.params.slug;
     const section=match.params.section;
     const topic=match.params.topic
-    const endPoint=`http://54.220.211.123:1227/categories/${slug}/${section}/${topic}`;
+    const endPoint=`http://localhost:1337/categories/${slug}/${section}/${topic}`;
     const [data, setData]=useState([]);
     useEffect(()=>{
        axios.get(endPoint).then(res=>{
