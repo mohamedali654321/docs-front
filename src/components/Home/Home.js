@@ -28,13 +28,13 @@ import axios from 'axios'
     console.log(home.content)
     return (
         <div>
-           <h1 style={{paddingBottom:"10px"}} key={home.id}>{home.name}</h1>
+           <h2 style={{paddingBottom:"10px"}} key={home.id}>{home.name}</h2>
            { home && home.content ?
            (
                home.content.map(cont=>(
                    <div key={cont.id}>
-                       <h2>{cont.title}</h2>
-                       <div dangerouslySetInnerHTML={{__html:cont.content}}></div>
+                       <h3>{cont.title}</h3>
+                       <div style={{fontSize:".75vw"}}  dangerouslySetInnerHTML={{__html:cont.content}}></div>
                        </div>
                ))
            ):null

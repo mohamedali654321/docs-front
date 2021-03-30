@@ -21,6 +21,7 @@
       overflow: auto;
       overflow-x:hidden;
      
+     
    
       
       
@@ -39,6 +40,7 @@
 
 
 .top {
+  display: flex;
     width: 100%;
     height: 70px;
     background-color:hsl(0, 0%, 100%);
@@ -49,18 +51,22 @@
   }
   
   .center {
-    width: 99.7%;
-    height: 94.3%;
+    width: 99.99%;
+    height: 93.5%;
     background-color:hsl(0, 0%, 100%);
     display: flex;
     flex-direction: row;
-    padding-left: 10px;
+    
     
     
    
   }
   .center .bar {
     height: 97%;
+    width: 23%;
+   
+    
+    
   }
   
   .VideoView {
@@ -68,7 +74,7 @@
     
     
     width: 100%;
-    height: 98%;
+    height: auto;
     background-color: hsl(0, 0%, 100%);
     
   }
@@ -84,6 +90,7 @@
     color: white;
     margin: 1em 0;
     font-size: 1rem;
+    padding-bottom: 30px;
 }
 .footer ul{
     list-style: none;
@@ -112,8 +119,8 @@
     place-items: center;
     padding: 2em; 
     font-size: 1.2rem;
-    position: sticky;
-    top: 100%;
+    /* position: sticky;
+    top: 100%; */
 }
 
 
@@ -126,3 +133,5 @@
     top: 100%;
     
 } 
+
+

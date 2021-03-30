@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react'
+import {Link} from 'react-router-dom'
 import axios from 'axios'
 const Section=({match})=> {
 
@@ -6,8 +7,8 @@ const Section=({match})=> {
     const section=match.params.section
     const endPoint=`http://localhost:1337/categories/${slug}/${section}`;
     const [sec, setSec]=useState([]);
-    useEffect(async()=>{
-     await  axios.get(endPoint).then(res=>{
+    useEffect(()=>{
+       axios.get(endPoint).then(res=>{
            setSec(res.data)
        }).catch(err=>{
            console.log(err)
@@ -15,27 +16,25 @@ const Section=({match})=> {
 
     },[sec]);
     
+    
     return (
         <div className="container">
-            <div className="content">
-             <h1 key={sec.id}>{sec.name}</h1>
+            
+                
+             <h2 key={sec.id}>{sec.name}</h2>
            { sec && sec.content ?
            (
                sec.content.map(cont=>(
                    <div key={cont.id}>
-                       <h2>{cont.title}</h2>
-                       <div dangerouslySetInnerHTML={{__html:cont.content}}></div>
+                       <h3>{cont.title}</h3>
+                       <div style={{fontSize:".75vw"}} dangerouslySetInnerHTML={{__html:cont.content}}></div>
                        </div>
                ))
            ):null
 
            }
-           </div>
-           <div className='topic'>
-              
-
-           </div>
-         
+           
+           
         </div>
     )
 }

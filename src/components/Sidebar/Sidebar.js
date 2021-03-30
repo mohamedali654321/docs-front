@@ -21,8 +21,8 @@ function Sidebar() {
 
       }).catch(err=>{
           console.log(err)
-      })
-  },[]);
+      });
+  },[data]);
   useEffect(()=>{
     axios.get(endPointSections).then(res=>{
         // console.log(res);
@@ -32,11 +32,11 @@ function Sidebar() {
           console.log(err)
       })
 
-  },[])
+  },[topic])
 
     return (
           
-        <div style={{width:420}} className="SidebarContainer">
+        <div  className="SidebarContainer">
             
             
 
@@ -50,7 +50,7 @@ function Sidebar() {
                               {
                                   item.sections.map(section=>(
                                     <ul style={{listStyleType:"none"}}>
-                                    <Link style={{fontSize:"17px"}} to={`/${item.slug}/${section.slug}`} onClick={showing}><li>{section.name}</li> </Link> 
+                                    <Link style={{fontSize:"16px"}} to={`/${item.slug}/${section.slug}`} onClick={showing}><li>{section.name}</li> </Link> 
                                     {
                                         topic.map(topic=>(
                                             <ul style={{listStyleType:"none"}}>
@@ -60,7 +60,7 @@ function Sidebar() {
                                                        {
                                                            topic.topics.map(top=>(
                                                               
-                                                            <Link style={{fontSize:"14px"}} to={`/${item.slug}/${section.slug}/${top.slug}`}><li>{top.name}</li> </Link> 
+                                                            <Link style={{fontSize:"13px"}} to={`/${item.slug}/${section.slug}/${top.slug}`}><li>{top.name}</li> </Link> 
                                                            ))
                                                        }
                                                        </>

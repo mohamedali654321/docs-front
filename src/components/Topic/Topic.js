@@ -17,13 +17,14 @@ function Topic({match}) {
     },[data]);
     return (
         <div>
-             <h1 key={data.id}>{data.name}</h1>
+             <h2 key={data.id}>{data.name}</h2>
            { data && data.content ?
            (
             data.content.map(cont=>(
                    <div key={cont.id}>
-                       <h2>{cont.title}</h2>
-                       <div dangerouslySetInnerHTML={{__html:cont.content}}></div>
+                       <h3>{cont.title}</h3>
+                       <div style={{fontSize:".75vw"}} dangerouslySetInnerHTML={{__html:cont.content}}></div>
+                       
                        </div>
                ))
            ):null

@@ -32,13 +32,15 @@ const [showSidebar,setShowSidebar]=useState(ToggleSidebarContext)
    <div className="center">
    
       {
-        showSidebar &&
-        <div className="scroll bar ">
+        showSidebar ?(
+          <div className="scroll bar ">
        
           <Sidebar/>
           
        
-        </div> 
+        </div>
+        ):null
+         
       }
           
      
