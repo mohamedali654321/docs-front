@@ -1,5 +1,6 @@
 import {useState} from 'react'
-import {BrowserRouter as Router , Route, Switch} from 'react-router-dom'
+import {BrowserRouter as Router , Route, Switch } from 'react-router-dom'
+
 import './App.css';
 import Category from './components/Category/Category'
 import Section from './components/Section/Section'
@@ -55,10 +56,15 @@ const [showSidebar,setShowSidebar]=useState(ToggleSidebarContext)
           <div className="content">
       
           <Switch>
-           <Route path='/' exact component={Home}></Route>
-           <Route path="/:slug" exact  component={Category}></Route>
-           <Route path="/:slug/:section"  exact component={Section}></Route>
-           <Route path="/:slug/:section/:topic"  exact component={Topic}></Route>
+           <Route path='/' exact component={Home}>
+             
+           </Route>
+           <Route path="/:slug/" exact  component={Category}>
+           {/* <IndexRoute  component={Category}/> */}
+           </Route>
+           
+           <Route path="/:slug/:section/"  exact component={Section}></Route>
+           <Route path="/:slug/:section/:topic/"  exact component={Topic}></Route>
            
           
           </Switch>

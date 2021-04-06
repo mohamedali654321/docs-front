@@ -14,7 +14,7 @@ function Footer() {
         </ul>
         
         
-        <p>   © 2021 The Docsy Authors All Rights Reserved For KnowldgeWare  <a href="http://kwareict.com/ar" style={{textDecoration:"none"}}>Website</a> </p>
+        <p>   © 2021 The Docsy Authors All Rights Reserved For KnowldgeWare  <a href="http://kwareict.com/ar" style={{textDecoration:"none"}} >   KnowldgeWare.org</a> </p>
         
         
         </footer>
